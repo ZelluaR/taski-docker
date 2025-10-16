@@ -105,7 +105,6 @@ jobs:
         npm ci
 
     - name: Test frontend
-      # Запускаем тесты
       run: |
         cd frontend/
         npm run test
@@ -177,9 +176,6 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          # Параметр script передаёт в action appleboy/ssh-action команды,
-          # которые нужно выполнить на сервере, 
-          # с которым установлено соединение
           script: |
             cd taski
             # Выполняет pull образов с Docker Hub
